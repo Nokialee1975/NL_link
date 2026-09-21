@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NL_link - Nokia Lee</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html, body { background: #FFFCF7; }
+* { -webkit-font-smoothing: antialiased; }
+::selection { background: #1a1a1a; color: #FFFCF7; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module">
+// FIXED: absolute https URLs - Issue #1 fix
+const LINKS = {
+  podcast: "https://open.spotify.com/show/4XSW9ZpGxKMkrOAau4zpOl",
+  note: "https://note.com/nokia_lee",
+  threads: "https://www.threads.net/@nokia_lee_",
+  instagram: "https://www.instagram.com/nokia_lee_",
+  contact: "https://lit.link/nokia_lee_"
+};
+
+const ACCOUNTS = [
+  {name:"Nokia Lee",handle:"@nokia_lee_",role:"AI美女実験と記録を置いてるところ — このページの主。6つの視点の起点。",num:"MAIN",main:true, url:"https://www.instagram.com/nokia_lee_"},
+  {name:"あきのり",handle:"@okdr203",role:"本人がアレなところ",num:"01", url:"https://www.instagram.com/okdr203"},
+  {name:"Nokie",handle:"@noki_eri",role:"バックアップするところ",num:"02", url:"https://www.instagram.com/noki_eri"},
+  {name:"OKACCHI201",handle:"@okdr201",role:"AI美男してるところ",num:"03", url:"https://www.instagram.com/okdr201"},
+  {name:"図鑑 by 🐻",handle:"@nokkunbear",role:"「なんなん？どうする？」をノウハウ図鑑にしてるところ",num:"04", url:"https://www.instagram.com/nokkunbear"},
+  {name:"Pistachisaurus",handle:"@pistachisaurusband",role:"ピスタチオに落書きしているところ",num:"05", url:"https://www.instagram.com/pistachisaurusband"},
+];
+
+function h(tag, cls, html){
+  const el = document.createElement(tag);
+  if(cls) el.className = cls;
+  if(html) el.innerHTML = html;
+  return el;
+}
+
+function render(){
+  const root = document.getElementById("root");
+  root.className = "relative z-10 mx-auto w-full max-w-[720px] px-[20px] sm:px-[32px] py-[36px] sm:py-[56px] min-h-screen bg-[#FFFCF7] text-[#1a1a1a] selection:bg-[#1a1a1a] selection:text-[#FFFCF7] antialiased";
+
+  // Background noise
+  const bg = h("div", "pointer-events-none fixed inset-0 z-0 opacity-[0.035] mix-blend-multiply");
+  bg.setAttribute("aria-hidden","true");
+  bg.style.backgroundImage = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`;
+  document.body.appendChild(bg);
+
+  // Header
+  root.innerHTML = `
+  <header class="relative mb-[44px] sm:mb-[64px]">
+    <div class="flex items-center gap-[8px] mb-[22px] sm:mb-[28px]">
+      <div class="border-[1.5px] border-black px-[8px] py-[2px] text-[10px] tracking-[0.18em] uppercase" style="font-family:IBM Plex Mono, monospace;border-radius:255px 15px 225px 15px / 15px 225px 15px 255px;transform:rotate(-1.5deg)">FIELD NOTE №001 — ECOSYSTEM MAP</div>
+      <span class="text-[10px] font-mono opacity-40">● REC 2025</span>
+    </div>
+    <div class="space-y-[8px]">
+      <h1 class="text-[52px] sm:text-[72px] leading-[0.9] tracking-[-0.03em] font-bold" style="font-family:Shippori Mincho, Noto Serif JP, serif">Nokia Lee</h1>
+      <div class="flex items-baseline gap-3">
+        <span class="text-[16px] sm:text-[18px] tracking-[0.02em] font-medium" style="font-family:IBM Plex Mono, monospace">@nokia_lee_</span>
+        <span class="inline-block w-[24px] h-[1.5px] bg-black opacity-20 self-center"></span>
+        <span class="text-[11px] font-mono opacity-40 tracking-widest">MAIN SPECIMEN</span>
+      </div>
+    </div>
+    <div class="mt-[28px] sm:mt-[32px]">
+      <div class="flex items-center gap-3">
+        <h2 class="text-[22px] sm:text-[26px] leading-none font-bold tracking-[-0.01em]" style="font-family:Shippori Mincho, serif">Aloby-edge</h2>
+        <div class="h-[1px] w-[28px] bg-black opacity-15"></div>
+        <span class="text-[10px] font-mono opacity-30 tracking-[0.2em]">PROJECT</span>
+      </div>
+    </div>
+    <div class="mt-[12px] flex flex-wrap gap-x-3 gap-y-1 text-[12px] sm:text-[13px] tracking-[0.06em] leading-[1.6] opacity-70" style="font-family:IBM Plex Mono, monospace">
+      <span>つながり循環プロトコル</span><span class="opacity-30">/</span><span>Nokia Lee Ecosystem</span>
+    </div>
+    <p class="max-w-[480px] text-[14px] sm:text-[15px] leading-[1.85] pt-[16px] opacity-80" style="font-family:Noto Serif JP, serif">このページは Nokia Lee のアカウント生態系。<br class="hidden sm:block">作る・広げる・集まるが循環する6つの視点を図鑑的に束ねたものです。</p>
+    <div class="mt-[22px] flex items-center gap-2">
+      <div class="inline-flex items-center border-[1px] border-black/20 px-[8px] py-[2px] bg-white/60" style="border-radius:2px"><span class="text-[10px] sm:text-[10.5px] tracking-[0.22em] uppercase opacity-60 font-medium" style="font-family:IBM Plex Mono, monospace">趣味の経済圏になる予定</span></div>
+      <span class="text-[9px] font-mono opacity-20 tracking-widest">— smallest index / tag</span>
+    </div>
+    <div class="mt-[26px] h-[1px] w-full opacity-10" style="background-image:repeating-linear-gradient(90deg, black 0 6px, transparent 6px 12px)"></div>
+  </header>
+
+  <section class="relative mb-[28px] sm:mb-[36px] group">
+    <div class="relative border-[2px] border-black bg-white/40 px-[20px] sm:px-[28px] py-[26px] sm:py-[32px] transition-all duration-200 group-hover:bg-white group-hover:-rotate-[0.3deg] group-hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" style="border-radius:255px 12px 225px 12px / 12px 225px 12px 255px">
+      <div class="absolute -top-[12px] left-[18px] flex items-center gap-2">
+        <div class="bg-[#FFFCF7] border-[1.5px] border-black px-[8px] py-[2px] text-[10px] tracking-[0.16em] font-medium" style="font-family:IBM Plex Mono, monospace;border-radius:2px">ENTRY 01 — 入り口</div>
+        <div class="w-[18px] h-[1.5px] bg-black opacity-20"></div>
+      </div>
+      <div class="flex flex-col gap-[14px]">
+        <h2 class="text-[20px] sm:text-[22px] leading-[1.4] font-bold tracking-[-0.01em]" style="font-family:Shippori Mincho, Noto Serif JP, serif">壁打ち洞窟<span class="block sm:inline sm:ml-[10px] text-[15px] sm:text-[16px] font-medium opacity-80">— 音声AI音声認識の誤変換を掘る60分</span></h2>
+        <p class="text-[13.5px] sm:text-[14px] leading-[1.9] opacity-75 max-w-[520px]" style="font-family:IBM Plex Mono, monospace">誤変換を掘る60分。Meta.AI × おっさんでやってる打ち合わせラジオ。<br>まずはここから。耳から入るフィールドノート。</p>
+        <div class="pt-[4px]">
+          <a href="${LINKS.podcast}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-[10px] border-[2px] border-black px-[18px] py-[9px] text-[13px] font-medium bg-[#1a1a1a] text-[#FFFCF7] hover:bg-white hover:text-black transition-colors duration-150" style="font-family:IBM Plex Mono, monospace;border-radius:255px 15px 225px 15px / 15px 225px 15px 255px"><span>Spotifyで聴く</span><span class="text-[14px] leading-none">↗</span></a>
+          <span class="ml-3 text-[11px] font-mono opacity-40">60:00 / cave radio</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative mb-[36px] sm:mb-[48px] group">
+    <div class="relative border-[2px] border-black bg-white/30 px-[20px] sm:px-[28px] py-[26px] sm:py-[32px] transition-all duration-200 group-hover:bg-white group-hover:rotate-[0.3deg] group-hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" style="border-radius:12px 255px 12px 225px / 225px 12px 255px 15px">
+      <div class="absolute -top-[12px] left-[18px] flex items-center gap-2">
+        <div class="bg-[#FFFCF7] border-[1.5px] border-black px-[8px] py-[2px] text-[10px] tracking-[0.16em] font-medium" style="font-family:IBM Plex Mono, monospace;border-radius:2px">ENTRY 02 — 深掘り</div>
+        <div class="w-[18px] h-[1.5px] bg-black opacity-20"></div>
+      </div>
+      <div class="flex flex-col gap-[14px]">
+        <h2 class="text-[20px] sm:text-[22px] leading-[1.4] font-bold tracking-[-0.01em]" style="font-family:Shippori Mincho, Noto Serif JP, serif">Noteで深掘り</h2>
+        <p class="text-[13.5px] sm:text-[14px] leading-[1.9] opacity-75 max-w-[520px]" style="font-family:IBM Plex Mono, monospace">仕組みを文章化してるところ。<br>いろんな「アレ」を作ってるログを置いてます。図とことばで。</p>
+        <div class="pt-[4px]">
+          <a href="${LINKS.note}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-[10px] border-[2px] border-black px-[18px] py-[9px] text-[13px] font-medium bg-white text-black hover:bg-black hover:text-[#FFFCF7] transition-colors duration-150" style="font-family:IBM Plex Mono, monospace;border-radius:15px 225px 15px 255px / 255px 15px 225px 15px"><span>Noteを読む</span><span class="text-[14px] leading-none">↗</span></a>
+          <span class="ml-3 text-[11px] font-mono opacity-40">log / note.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex items-center gap-3 my-[32px] sm:my-[40px] opacity-30">
+    <div class="h-[1px] flex-1 bg-black" style="background-image:repeating-linear-gradient(90deg, black 0 2px, transparent 2px 8px)"></div>
+    <span class="text-[10px] tracking-[0.2em] font-mono">* * *</span>
+    <div class="h-[1px] flex-1 bg-black" style="background-image:repeating-linear-gradient(90deg, black 0 2px, transparent 2px 8px)"></div>
+  </div>
+  `;
+
+  // Ecosystem grid
+  let gridHtml = `
+  <section class="relative mb-[48px] sm:mb-[64px]">
+    <div class="mb-[22px] flex items-start justify-between gap-4">
+      <div>
+        <div class="inline-block border-[1.5px] border-black px-[8px] py-[2px] text-[10px] tracking-[0.16em] font-medium mb-[12px]" style="font-family:IBM Plex Mono, monospace;border-radius:2px">ECOSYSTEM — 生態系</div>
+        <h2 class="text-[24px] sm:text-[26px] leading-[1.2] font-bold" style="font-family:Shippori Mincho, Noto Serif JP, serif">6つのアカウントが<br>循環してます。</h2>
+      </div>
+      <div class="hidden sm:block text-right pt-2"><div class="text-[10px] font-mono opacity-40 leading-[1.5]">Fig. 03<br>循環図<br>6 specimens</div></div>
+    </div>
+    <p class="text-[13px] leading-[1.8] opacity-60 mb-[20px] max-w-[420px]" style="font-family:IBM Plex Mono, monospace">役割を書いてます。どれも同じ人がやってるけど、視点が違う。</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-[12px] sm:gap-[14px]">
+  `;
+
+  ACCOUNTS.forEach(acc=>{
+    if(acc.main){
+      gridHtml += `
+      <div class="group relative col-span-1 sm:col-span-2 border-[2.2px] border-black bg-[#1a1a1a] text-[#FFFCF7] px-[18px] sm:px-[22px] py-[22px] sm:py-[24px] transition-all duration-200 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-[1px]" style="border-radius:255px 12px 225px 12px / 12px 225px 12px 255px">
+        <div class="absolute -top-[10px] left-[18px] flex items-center gap-2">
+          <div class="bg-[#FFFCF7] text-black border-[1.5px] border-black px-[8px] py-[2px] text-[10px] tracking-[0.16em] font-medium" style="font-family:IBM Plex Mono, monospace;border-radius:2px">MAIN — このアカウント</div>
+          <div class="w-[16px] h-[1.5px] bg-white/30"></div>
+        </div>
+        <div class="absolute top-[12px] right-[14px] text-[10px] font-mono opacity-40 tracking-[0.3em]">${acc.num}</div>
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-[14px]">
+          <div class="flex flex-col gap-[10px]">
+            <div>
+              <div class="flex items-baseline gap-3"><h3 class="text-[20px] sm:text-[22px] font-bold leading-[1.1]" style="font-family:Shippori Mincho, serif">${acc.name}</h3><span class="text-[13px] font-mono opacity-70">${acc.handle}</span></div>
+              <div class="mt-[8px] h-[1px] w-[40px] bg-white/20"></div>
+            </div>
+            <p class="text-[12.5px] leading-[1.8] opacity-80 max-w-[360px]" style="font-family:IBM Plex Mono, monospace">${acc.role}</p>
+          </div>
+          <div class="sm:text-right flex sm:flex-col items-center sm:items-end gap-2 sm:gap-1 pt-1">
+            <a href="${acc.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 border border-white/30 px-[12px] py-[6px] text-[11px] tracking-[0.06em] hover:bg-white hover:text-black transition-colors" style="font-family:IBM Plex Mono, monospace;border-radius:255px 15px 225px 15px / 15px 225px 15px 255px">メインページ <span>→</span></a>
+            <span class="text-[10px] font-mono opacity-30">/ primary specimen</span>
+          </div>
+        </div>
+      </div>`;
+    } else {
+      gridHtml += `
+      <div class="group relative border-[1.8px] border-black bg-white/50 px-[16px] sm:px-[18px] py-[18px] sm:py-[20px] transition-all duration-200 hover:bg-white hover:-translate-y-[1px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:rotate-[-0.4deg]" style="border-radius:255px 10px 225px 10px / 10px 225px 10px 255px">
+        <div class="absolute top-[10px] right-[12px] text-[10px] font-mono opacity-30 tracking-widest">${acc.num}</div>
+        <div class="flex flex-col gap-[8px]">
+          <div>
+            <div class="flex items-baseline gap-2"><h3 class="text-[16px] font-bold leading-[1.2]" style="font-family:Shippori Mincho, serif">${acc.name}</h3><span class="text-[11px] font-mono opacity-50">${acc.handle}</span></div>
+            <div class="mt-[6px] h-[1px] w-[32px] bg-black opacity-20"></div>
+          </div>
+          <p class="text-[12.5px] leading-[1.7] opacity-70 min-h-[38px]" style="font-family:IBM Plex Mono, monospace">${acc.role}</p>
+          <div class="pt-[6px] flex items-center gap-2">
+            <a href="${acc.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] tracking-[0.06em] font-medium border-b-[1.5px] border-black pb-[1px] hover:opacity-60 transition-opacity" style="font-family:IBM Plex Mono, monospace">見に行く <span>→</span></a>
+            <span class="text-[10px] font-mono opacity-30">/ specimen</span>
+          </div>
+        </div>
+        <div class="absolute bottom-[12px] right-[14px] w-[4px] h-[4px] rounded-full bg-black opacity-20 group-hover:opacity-40 transition-opacity"></div>
+      </div>`;
+    }
+  });
+
+  gridHtml += `</div><div class="mt-[18px] flex gap-2 text-[10px] font-mono opacity-30 leading-[1.4]"><span>※</span><span>6つで1つの季節。重なってるところが Aloby-edge。図鑑的に見てね。</span></div></section>`;
+
+  root.innerHTML += gridHtml;
+
+  // Footer - FIXED absolute URLs
+  root.innerHTML += `
+  <footer class="relative mt-[16px] border-t-[2px] border-black border-dashed pt-[24px] sm:pt-[28px]">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-[18px]">
+      <div class="space-y-[10px]">
+        <p class="text-[13px] leading-[1.8] max-w-[360px]" style="font-family:Noto Serif JP, serif">Aloby-edgeは趣味人の経済圏をつなぐプロトコルに育てるつもりです。</p>
+        <div class="flex items-center gap-2 text-[11px] font-mono opacity-50" style="font-family:IBM Plex Mono, monospace"><span>© 2025 Aloby-edge</span><span class="opacity-30">—</span><span>小さな経済圏の観察記録</span></div>
+      </div>
+      <div class="flex items-center gap-[14px] sm:gap-[18px]">
+        <a href="${LINKS.threads}" target="_blank" rel="noopener noreferrer" class="text-[12px] tracking-[0.06em] font-medium underline decoration-dashed underline-offset-4 decoration-1 hover:opacity-60 transition-opacity" style="font-family:IBM Plex Mono, monospace">Threads</a>
+        <a href="${LINKS.instagram}" target="_blank" rel="noopener noreferrer" class="text-[12px] tracking-[0.06em] font-medium underline decoration-dashed underline-offset-4 decoration-1 hover:opacity-60 transition-opacity" style="font-family:IBM Plex Mono, monospace">Instagram</a>
+        <a href="${LINKS.contact}" target="_blank" rel="noopener noreferrer" class="text-[12px] tracking-[0.06em] font-medium underline decoration-dashed underline-offset-4 decoration-1 hover:opacity-60 transition-opacity" style="font-family:IBM Plex Mono, monospace">Contact</a>
+        <div class="ml-1 border-[1.5px] border-black px-[8px] py-[3px] text-[10px] font-mono tracking-widest rotate-[2deg] bg-white" style="border-radius:255px 15px 225px 15px / 15px 225px 15px 255px">END</div>
+      </div>
+    </div>
+    <div class="mt-[28px] flex justify-between text-[9px] font-mono opacity-20 tracking-[0.2em]"><span>ALOBY-EDGE / 趣味人経済圏 / 001</span><span class="hidden sm:inline">— FIELD GUIDE —</span></div>
+  </footer>`;
+}
+
+render();
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
+</html>
